@@ -1,8 +1,12 @@
 import { auth } from "@/auth/auth"
 import { redirect } from "next/navigation"
 import { updateUserRole } from "@/actions/user"
-import { Role } from "@prisma/client"
 import { GraduationCap, Briefcase } from "lucide-react"
+
+enum Role {
+  JUNIOR = "JUNIOR",
+  SENIOR = "SENIOR"
+}
 
 export default async function OnboardingPage() {
   const session = await auth()

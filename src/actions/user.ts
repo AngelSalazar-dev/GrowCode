@@ -2,9 +2,13 @@
 
 import { auth } from "@/auth/auth"
 import { prisma } from "@/lib/prisma"
-import { Role } from "@prisma/client"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
+
+enum Role {
+  JUNIOR = "JUNIOR",
+  SENIOR = "SENIOR"
+}
 
 export async function updateUserRole(role: Role) {
   const session = await auth()
