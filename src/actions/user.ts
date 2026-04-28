@@ -5,10 +5,7 @@ import { prisma } from "@/lib/prisma"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
 
-enum Role {
-  JUNIOR = "JUNIOR",
-  SENIOR = "SENIOR"
-}
+import { Role } from "@/generated-v2/client"
 
 export async function updateUserRole(role: Role) {
   const session = await auth()

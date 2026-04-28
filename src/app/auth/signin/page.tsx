@@ -7,7 +7,9 @@ import { useState } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import Link from "next/link"
 
-export default function SignInPage() {
+import { Suspense } from "react"
+
+function SignInContent() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
   const searchParams = useSearchParams()
@@ -43,16 +45,7 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-6 relative overflow-hidden">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,_var(--color-accent-gro)_0%,transparent_40%)] opacity-[0.05] -z-10" />
-      <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_80%,_var(--color-accent-gro)_0%,transparent_40%)] opacity-[0.05] -z-10" />
-
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="w-full max-w-[420px] space-y-10"
-      >
+    <>
         <div className="text-center space-y-6">
           <Link href="/" className="inline-block group">
             <img src="/Black Isotype.png" className="w-16 h-16 object-contain dark:hidden group-hover:scale-110 transition-transform" />
@@ -128,6 +121,25 @@ export default function SignInPage() {
         <Link href="/" className="flex items-center justify-center gap-2 text-xs font-bold text-muted hover:text-foreground transition-colors">
           <ArrowLeft className="w-3 h-3" /> Volver al inicio
         </Link>
+    </>
+  )
+}
+
+export default function SignInPage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-background px-6 relative overflow-hidden">
+      {/* Background Decor */}
+      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_20%,_var(--color-accent-gro)_0%,transparent_40%)] opacity-[0.05] -z-10" />
+      <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_80%,_var(--color-accent-gro)_0%,transparent_40%)] opacity-[0.05] -z-10" />
+
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full max-w-[420px] space-y-10"
+      >
+        <Suspense fallback={<div className="w-full flex items-center justify-center p-10"><Loader2 className="w-8 h-8 animate-spin text-accent-gro" /></div>}>
+          <SignInContent />
+        </Suspense>
       </motion.div>
     </div>
   )

@@ -1,6 +1,6 @@
 "use client"
 
-import { Post, User, Like, Bookmark, Comment } from "@prisma/client"
+import { Post, User, Like, Bookmark, Comment } from "@/generated-v2/client"
 import { ExternalLink, MessageSquare, Star, GitBranch, MoreHorizontal, Bookmark as BookmarkIcon, Share2, Loader2, Check } from "lucide-react"
 import { getYouTubeId } from "@/lib/utils"
 import { motion } from "framer-motion"
