@@ -1,5 +1,5 @@
 import { Post, User } from "@prisma/client"
-import { ExternalLink, Youtube } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 import { getYouTubeId } from "@/lib/utils"
 
 interface PostCardProps {

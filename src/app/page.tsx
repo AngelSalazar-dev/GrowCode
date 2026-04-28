@@ -13,7 +13,7 @@ export default function Home() {
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold text-gray-900 tracking-tight mb-8">
             Eleva tu código con <span className="text-indigo-600">Mentoría Técnica</span>
-          </div>
+          </h1>
           <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Conecta con expertos, comparte recursos de calidad y acelera tu carrera profesional en la comunidad más activa de devs.
           </p>
