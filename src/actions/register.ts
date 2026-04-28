@@ -23,7 +23,7 @@ export async function registerUser(formData: FormData) {
       name,
       email,
       password: hashedPassword,
-    }
+    } as any
   })
 
   return { success: true }
