@@ -134,7 +134,7 @@ const RESOURCE_URLS = [
   null,null,null,null,null, // Some posts without URLs
 ]
 
-function rand<T>(arr: T[]): T {
+function rand<T>(arr: readonly T[]): T {
   return arr[Math.floor(Math.random() * arr.length)]
 }
 
