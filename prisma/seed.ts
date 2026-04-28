@@ -7,7 +7,7 @@ async function main() {
   const hashedPassword = await bcrypt.hash("password123", 10)
 
   // Crear Mentores (Seniors)
-  const mentors = [
+  const mentors: { name: string; email: string; role: "SENIOR"; image: string }[] = [
     {
       name: "David 'DHH' Heinemeier",
       email: "david@rails.com",
@@ -46,7 +46,7 @@ async function main() {
   }
 
   // Crear Juniors
-  const juniors = [
+  const juniors: { name: string; email: string; role: "JUNIOR"; image: string }[] = [
     {
       name: "Alex Dev",
       email: "alex@test.com",
